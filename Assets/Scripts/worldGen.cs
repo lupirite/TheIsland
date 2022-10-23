@@ -11,6 +11,7 @@ public class worldGen : MonoBehaviour
     public static worldGen[] instances = new worldGen[10];
     public hexType[] hexTypes;
     public GameObject firePlace;
+    public GameObject hause;
     public GameObject mine;
     public GameObject spawnPoint;
     public GameObject undetermined;

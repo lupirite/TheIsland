@@ -557,7 +557,7 @@ PrefabInstance:
       objectReference: {fileID: 1457965129}
     - target: {fileID: 5139713882366470551, guid: 7789a9d0bdbb3504c934fd98858ce6b4, type: 3}
       propertyPath: camRestDist
-      value: 2
+      value: 2.75
       objectReference: {fileID: 0}
     - target: {fileID: 5139713882366470551, guid: 7789a9d0bdbb3504c934fd98858ce6b4, type: 3}
       propertyPath: camLerpSpeed
@@ -632,7 +632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b22f9e21b24335e40a1f2e6fcd738723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tailStiffness: 10
+  tailStiffness: 13
   nextBone: {fileID: 1658739411}
 --- !u!1 &1072322233
 GameObject:
@@ -678,7 +678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b22f9e21b24335e40a1f2e6fcd738723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tailStiffness: 10
+  tailStiffness: 13
   nextBone: {fileID: 978424479}
 --- !u!1 &1098475067
 GameObject:
@@ -1152,7 +1152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2484174823485625483, guid: f512999a2f361bd448fa98148988d58d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f512999a2f361bd448fa98148988d58d, type: 3}
@@ -1210,7 +1210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b22f9e21b24335e40a1f2e6fcd738723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tailStiffness: 10
+  tailStiffness: 13
   nextBone: {fileID: 2047898067}
 --- !u!1 &1698965391
 GameObject:
@@ -1418,7 +1418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b22f9e21b24335e40a1f2e6fcd738723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tailStiffness: 10
+  tailStiffness: 13
   nextBone: {fileID: 0}
 --- !u!224 &1115175938433580375
 RectTransform:

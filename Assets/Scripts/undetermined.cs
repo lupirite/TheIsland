@@ -8,6 +8,7 @@ public class undetermined : MonoBehaviour
     public int type = -1;
     public Vector2 pos;
     public int ID;
+    public GameObject gO;
 
     public void init()
     {
@@ -56,15 +57,32 @@ public class undetermined : MonoBehaviour
         GameObject ob = transform.parent.GetComponent<worldGen>().hexTypes[type].prefab;
 
         if (GetComponentInParent<worldGen>().hexTypes[type].prefab != null) {
-            GameObject gO = Instantiate(ob, transform.position + new Vector3(0, GetComponentInParent<worldGen>().hexTypes[type].elevation, 0), ob.transform.rotation, transform.parent);
+            gO = Instantiate(ob, transform.position + new Vector3(0, GetComponentInParent<worldGen>().hexTypes[type].elevation, 0), ob.transform.rotation, transform.parent);
             if (gO.GetComponent<spawnTile>())
             {
                 gO.GetComponent<spawnTile>().ID = ID;
             }
             if (main) {
                 Destroy(gO.GetComponent<spawnTile>());
+
+                GameObject h = transform.parent.GetComponent<worldGen>().hause;
+                GameObject hause = Instantiate(h, transform.position + new Vector3(0, GetComponentInParent<worldGen>().hexTypes[type].elevation + 1f, 0), h.transform.rotation, ProgressionManagement.instances[gameObject.scene.buildIndex].transform);
+                ProgressionManagement.instances[gameObject.scene.buildIndex].structures[2] = hause;
+
+                for (int i = 0; i < 6; i++)
+                {
+                    getNeighbor(i).GetComponent<undetermined>().collapse(4);
+                    Destroy(getNeighbor(i).GetComponent<undetermined>().gO.GetComponent<spawnTile>());
+                    transform.parent.GetComponent<worldGen>().hxs.Remove(getNeighbor(i));
+                }
+
+                Transform nb = getNeighbor(0).GetComponent<undetermined>().getNeighbor(1).GetComponent<undetermined>().getNeighbor(0);
+                nb.GetComponent<undetermined>().collapse(4);
+                Destroy(nb.GetComponent<undetermined>().gO.GetComponent<spawnTile>());
+                transform.parent.GetComponent<worldGen>().hxs.Remove(nb);
+
                 GameObject fp = transform.parent.GetComponent<worldGen>().firePlace;
-                GameObject obj = Instantiate(fp, transform.position + new Vector3(0, GetComponentInParent<worldGen>().hexTypes[type].elevation+.7f, 0), fp.transform.rotation, ProgressionManagement.instances[gameObject.scene.buildIndex].transform);
+                GameObject obj = Instantiate(fp, nb.position + new Vector3(0, GetComponentInParent<worldGen>().hexTypes[type].elevation + .7f, 0), fp.transform.rotation, ProgressionManagement.instances[gameObject.scene.buildIndex].transform);
                 ProgressionManagement.instances[gameObject.scene.buildIndex].structures[0] = obj;
             }
             if (mine) {
@@ -91,7 +109,6 @@ public class undetermined : MonoBehaviour
                 Instantiate(sp, transform.position + new Vector3(0, GetComponentInParent<worldGen>().hexTypes[type].elevation, 0), Quaternion.Euler(-90, new[] { -60, -120 }[Random.Range(0, 1)], 0), ProgressionManagement.instances[gameObject.scene.buildIndex].transform);
             }
         }
-        //Destroy(gameObject);
     }
 
     public void propagate(undetermined ins)

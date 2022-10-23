@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43453637, g: 0.48151326, b: 0.5624324, a: 1}
+  m_IndirectSpecularColor: {r: 0.4345359, g: 0.48151267, b: 0.5624313, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -468,6 +468,7 @@ MonoBehaviour:
     elevation: 0.4
     weight: 0.000001
   firePlace: {fileID: 2481786551375247969, guid: ae223292126724870a56134a9ea7994d, type: 3}
+  hause: {fileID: 5846584903321105980, guid: 4167164341b201548be47a884754bb77, type: 3}
   mine: {fileID: 1029672493525631020, guid: c350b0a051bac9c55a95b54103b9d32a, type: 3}
   spawnPoint: {fileID: 0}
   undetermined: {fileID: 1843961191023011364, guid: 952856abaad83014580ed7c5bac813fd, type: 3}

@@ -54,7 +54,7 @@ public class ProgressionManagement : MonoBehaviour
     GameObject indicator;
     void Update()
     {
-        if (!indicator && structures[level])
+        if (!indicator && structures[level] && level == 0)
         {
             readyStructure();
         }
