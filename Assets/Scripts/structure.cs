@@ -17,6 +17,10 @@ public class structure : MonoBehaviour
                     if (matGroup.complete) {
                         continue;
                     }
+                    if (GameManager.instance.pickupTypes[matGroup.itemId].name+"(Clone)" != hitCollider.gameObject.name)
+                    {
+                        continue;
+                    }
                     float logSize = hitCollider.transform.localScale.y*2;
                     Destroy(hitCollider.gameObject);
                     setResources(matGroup, matGroup.resources + logSize);
@@ -37,6 +41,7 @@ public class structure : MonoBehaviour
             }
             matGroup.complete = true;
         }
+        print(finalObjects);
         if (finalObjects != null)
         {
             for (int i = 0; i < finalObjects.Length; i++)
@@ -57,23 +62,24 @@ public class structure : MonoBehaviour
         if (matGroup.resources >= matGroup.resourcesRequired)
         {
             matGroup.complete = true;
-            foreach (MaterialGroup group in materialGroups)
+            for (int i = 0; i < materialGroups.Length; i++)
             {
+                MaterialGroup group = materialGroups[i];
+                print("floof");
                 if (!group.complete)
                 {
                     break;
                 }
-                if (matGroup == materialGroups[materialGroups.Length - 1])
+                print("place");
+                if (i == materialGroups.Length-1)
                 {
+                    print("boop");
                     complete = true;
                     if (finalObjects != null)
                     {
-                        if (finalObjects != null)
+                        foreach (Transform ob in finalObjects)
                         {
-                            foreach (Transform ob in finalObjects)
-                            {
-                                ob.gameObject.SetActive(!ob.gameObject.active);
-                            }
+                            ob.gameObject.SetActive(!ob.gameObject.active);
                         }
                     }
                 }
