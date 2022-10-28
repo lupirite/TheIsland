@@ -8,7 +8,9 @@ public class structure : MonoBehaviour
     public float pickUpDist;
     public MaterialGroup[] materialGroups;
     public Transform[] finalObjects;
+    public Transform[] initObjects;
     public bool complete;
+    public bool started;
     void Update() {
         if (!complete) {
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, pickUpDist, collectableMask);
@@ -17,9 +19,20 @@ public class structure : MonoBehaviour
                     if (matGroup.complete) {
                         continue;
                     }
-                    if (GameManager.instance.pickupTypes[matGroup.itemId].name+"(Clone)" != hitCollider.gameObject.name)
+                    if (!(GameManager.instance.pickupTypes[matGroup.itemId].name+"(Clone)" == hitCollider.gameObject.name || ((matGroup.itemId == 1) && GameManager.instance.pickupTypes[3].name + "(Clone)" == hitCollider.gameObject.name)))
                     {
                         continue;
+                    }
+                    if (!started)
+                    {
+                        started = true;
+                        if (initObjects != null)
+                        {
+                            foreach (Transform ob in initObjects)
+                            {
+                                ob.gameObject.SetActive(!ob.gameObject.active);
+                            }
+                        }
                     }
                     float logSize = hitCollider.transform.localScale.y*2;
                     Destroy(hitCollider.gameObject);
@@ -33,6 +46,14 @@ public class structure : MonoBehaviour
     }
     public void build()
     {
+        if (initObjects != null)
+        {
+            started = true;
+            foreach (Transform ob in initObjects)
+            {
+                ob.gameObject.SetActive(!ob.gameObject.active);
+            }
+        }
         foreach (MaterialGroup matGroup in materialGroups)
         {
             for (int i = 0; i < matGroup.group.childCount; i++)
@@ -41,7 +62,6 @@ public class structure : MonoBehaviour
             }
             matGroup.complete = true;
         }
-        print(finalObjects);
         if (finalObjects != null)
         {
             for (int i = 0; i < finalObjects.Length; i++)
@@ -53,6 +73,17 @@ public class structure : MonoBehaviour
     }
     public void setResources(MaterialGroup matGroup, float amount)
     {
+        if (!started)
+        {
+            started = true;
+            if (initObjects != null)
+            {
+                foreach (Transform ob in initObjects)
+                {
+                    ob.gameObject.SetActive(!ob.gameObject.active);
+                }
+            }
+        }
         matGroup.resources = amount;
         for (int i = 0; i < (float)matGroup.group.childCount * Mathf.Min(1, (matGroup.resources / matGroup.resourcesRequired)); i++)
         {
@@ -65,15 +96,12 @@ public class structure : MonoBehaviour
             for (int i = 0; i < materialGroups.Length; i++)
             {
                 MaterialGroup group = materialGroups[i];
-                print("floof");
                 if (!group.complete)
                 {
                     break;
                 }
-                print("place");
                 if (i == materialGroups.Length-1)
                 {
-                    print("boop");
                     complete = true;
                     if (finalObjects != null)
                     {

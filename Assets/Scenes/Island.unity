@@ -471,6 +471,7 @@ MonoBehaviour:
   hause: {fileID: 5846584903321105980, guid: 4167164341b201548be47a884754bb77, type: 3}
   mine: {fileID: 1029672493525631020, guid: c350b0a051bac9c55a95b54103b9d32a, type: 3}
   spawnPoint: {fileID: 0}
+  foundary: {fileID: 60815076829311137, guid: b2872b6e5ba66d34ba6ba11be8ec0258, type: 3}
   undetermined: {fileID: 1843961191023011364, guid: 952856abaad83014580ed7c5bac813fd, type: 3}
   size: 18
   regionSplits: 3

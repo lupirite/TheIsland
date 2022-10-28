@@ -220,7 +220,10 @@ MonoBehaviour:
   finalObjects:
   - {fileID: 2982109592702794643}
   - {fileID: 6479825846964675790}
+  initObjects:
+  - {fileID: 8595255893630001719}
   complete: 0
+  started: 0
 --- !u!1001 &106390770831329383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5792,6 +5795,10 @@ PrefabInstance:
     - target: {fileID: 1843961191023011364, guid: 00e0526245d99d34791804ebacf9132a, type: 3}
       propertyPath: m_Name
       value: Gravel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843961191023011364, guid: 00e0526245d99d34791804ebacf9132a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00e0526245d99d34791804ebacf9132a, type: 3}

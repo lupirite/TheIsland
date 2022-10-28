@@ -58,7 +58,7 @@ public class ProgressionManagement : MonoBehaviour
         {
             readyStructure();
         }
-        if (structures[level] && structures[level].GetComponent<structure>().complete && structures[level]) {
+        if (structures[level] && structures[level].GetComponent<structure>().complete && structures[level+1]) {
             level++;
             readyStructure();
         }

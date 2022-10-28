@@ -56,13 +56,13 @@ public class CarryPoint : MonoBehaviour
     float getHeight(GameObject log)
     {
         float height = log.transform.localScale.y;
-        if (log.name != GameManager.instance.pickupTypes[0].name + "(Clone)")
+        if (log.name != GameManager.instance.pickupTypes[0].name + "(Clone)" && log.name != GameManager.instance.pickupTypes[2].name + "(Clone)")
         {
             height = log.transform.localScale.z;
         }
-        if (log.name == GameManager.instance.pickupTypes[2].name + "(Clone)")
+        if (log.name == GameManager.instance.pickupTypes[4].name + "(Clone)")
         {
-            height = log.transform.localScale.y;
+            height = log.transform.localScale.z*.75f;
         }
         return height;
     }

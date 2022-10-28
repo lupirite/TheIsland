@@ -14,6 +14,7 @@ public class worldGen : MonoBehaviour
     public GameObject hause;
     public GameObject mine;
     public GameObject spawnPoint;
+    public GameObject foundary;
     public GameObject undetermined;
     public int size;
     public int regionSplits;
@@ -176,6 +177,7 @@ public class worldGen : MonoBehaviour
         bool createdMain = false;
         bool createdMine = false;
         bool createdSpawn = false;
+        bool createdFoundary = false;
         for (int y = 0; y < regionSplits; y++)
         {
             for (int x = 0; x < regionSplits; x++)
@@ -191,13 +193,17 @@ public class worldGen : MonoBehaviour
                 int choice = choices[Random.Range(0, choices.Count)];
 
                 if (!cave) {
-                    c.GetComponent<undetermined>().collapse(choice, choice == 4 && !createdMain, choice == 5 && !createdMine, false);
+                    c.GetComponent<undetermined>().collapse(choice, choice == 4 && !createdMain, choice == 5 && !createdMine, false, createdMain && !createdFoundary && choice == 4);
                 
                     if (choice == 4 && !createdMain) {
                         createdMain = true;
                     }
                     else if (choice == 5 && !createdMine) {
                         createdMine = true;
+                    }
+                    else if (choice == 4 && !createdFoundary)
+                    {
+                        createdFoundary = true;
                     }
                 }
                 else {
