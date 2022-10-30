@@ -15,6 +15,7 @@ public class worldGen : MonoBehaviour
     public GameObject mine;
     public GameObject spawnPoint;
     public GameObject foundary;
+    public GameObject woodMill;
     public GameObject undetermined;
     public int size;
     public int regionSplits;
@@ -178,6 +179,7 @@ public class worldGen : MonoBehaviour
         bool createdMine = false;
         bool createdSpawn = false;
         bool createdFoundary = false;
+        bool createdMill = false;
         for (int y = 0; y < regionSplits; y++)
         {
             for (int x = 0; x < regionSplits; x++)
@@ -193,7 +195,7 @@ public class worldGen : MonoBehaviour
                 int choice = choices[Random.Range(0, choices.Count)];
 
                 if (!cave) {
-                    c.GetComponent<undetermined>().collapse(choice, choice == 4 && !createdMain, choice == 5 && !createdMine, false, createdMain && !createdFoundary && choice == 4);
+                    c.GetComponent<undetermined>().collapse(choice, choice == 4 && !createdMain, choice == 5 && !createdMine, false, createdMain && !createdFoundary && choice == 4, createdFoundary && !createdMill && choice == 4);
                 
                     if (choice == 4 && !createdMain) {
                         createdMain = true;
@@ -204,6 +206,10 @@ public class worldGen : MonoBehaviour
                     else if (choice == 4 && !createdFoundary)
                     {
                         createdFoundary = true;
+                    }
+                    else if (choice == 4 && !createdMill)
+                    {
+                        createdMill = true;
                     }
                 }
                 else {
