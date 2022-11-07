@@ -473,6 +473,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 0}
   foundary: {fileID: 60815076829311137, guid: b2872b6e5ba66d34ba6ba11be8ec0258, type: 3}
   woodMill: {fileID: 60815076829311137, guid: 5f22cb7a652e1f64eb80bb8e1ce065b3, type: 3}
+  bote: {fileID: 9033649075226822898, guid: 473d569e927978b4094ad4f830c55176, type: 3}
   undetermined: {fileID: 1843961191023011364, guid: 952856abaad83014580ed7c5bac813fd, type: 3}
   size: 18
   regionSplits: 3

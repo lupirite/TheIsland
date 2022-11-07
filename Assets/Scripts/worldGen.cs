@@ -16,6 +16,7 @@ public class worldGen : MonoBehaviour
     public GameObject spawnPoint;
     public GameObject foundary;
     public GameObject woodMill;
+    public GameObject bote;
     public GameObject undetermined;
     public int size;
     public int regionSplits;
@@ -174,7 +175,7 @@ public class worldGen : MonoBehaviour
                 }
             }
         }
-
+        Transform c;
         bool createdMain = false;
         bool createdMine = false;
         bool createdSpawn = false;
@@ -189,7 +190,7 @@ public class worldGen : MonoBehaviour
                 Random.seed = (int)Mathf.Pow(seed * x, y)+1;
                 int offsetY = Random.Range(-2, 2);
 
-                Transform c = getHex(new Vector2((x + 1) * (int)((size * 2) / (regionSplits + 1)) - size + offsetX, (y + 1) * (int)((size * 2) / (regionSplits + 1)) - size + offsetY));
+                c = getHex(new Vector2((x + 1) * (int)((size * 2) / (regionSplits + 1)) - size + offsetX, (y + 1) * (int)((size * 2) / (regionSplits + 1)) - size + offsetY));
 
                 Random.seed = seed*(x+y*10) + 2;
                 int choice = choices[Random.Range(0, choices.Count)];
@@ -222,6 +223,11 @@ public class worldGen : MonoBehaviour
                 hxs.Remove(c);
             }
         }
+
+        c = getHex(new Vector2(size-1, 0));
+        c.GetComponent<undetermined>().collapse(6);
+        Instantiate(bote, c.position + new Vector3(3, 2.1f, 0), Quaternion.Euler(0, 70, 0), ProgressionManagement.instances[gameObject.scene.buildIndex].transform);
+
         setStartCount();
         StartCoroutine(AddTile());
     }
