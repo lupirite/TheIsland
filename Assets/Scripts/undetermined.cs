@@ -106,7 +106,7 @@ public class undetermined : MonoBehaviour
 
                 GameObject h = transform.parent.GetComponent<worldGen>().woodMill;
                 GameObject mil = Instantiate(h, transform.position + new Vector3(0, GetComponentInParent<worldGen>().hexTypes[type].elevation + .25f, 0), h.transform.rotation, ProgressionManagement.instances[gameObject.scene.buildIndex].transform);
-                ProgressionManagement.instances[gameObject.scene.buildIndex].structures[3] = mil;
+                ProgressionManagement.instances[gameObject.scene.buildIndex].structures[4] = mil;
 
                 for (int i = 0; i < 6; i++)
                 {

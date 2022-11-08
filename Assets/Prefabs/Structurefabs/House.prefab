@@ -206,7 +206,7 @@ MonoBehaviour:
   pickUpDist: 4.8
   materialGroups:
   - resources: 0
-    resourcesRequired: 15
+    resourcesRequired: 25
     group: {fileID: 8677039583267584065}
     complete: 0
     itemId: 1

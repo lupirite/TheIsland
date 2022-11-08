@@ -162,7 +162,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &2060842557459582555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,6 +197,10 @@ MonoBehaviour:
   icons:
   - {fileID: 2909872731237909987, guid: add08473caa6cca46b1ae96cd3a74c22, type: 3}
   - {fileID: 2909872731237909987, guid: 1e6c4608025c78c4f99afe98b893661f, type: 3}
+  - {fileID: 2909872731237909987, guid: 1e6c4608025c78c4f99afe98b893661f, type: 3}
+  - {fileID: 2909872731237909987, guid: fae15651b3a66a743b8a241ff52c4804, type: 3}
+  - {fileID: 2909872731237909987, guid: fae15651b3a66a743b8a241ff52c4804, type: 3}
+  - {fileID: 2909872731237909987, guid: 690394c8cfcd5c747bb83fe97bdc4605, type: 3}
   iconElements: []
 --- !u!95 &539700229646892021
 Animator:

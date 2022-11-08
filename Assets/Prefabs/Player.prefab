@@ -74,7 +74,7 @@ MonoBehaviour:
   anim: {fileID: 8292000470862496530}
   threshold: 0.2
   g: -0.4
-  checkRadius: 0.2
+  checkRadius: 0.1
   turnSpeed: 10
   splashParticle: {fileID: 1228360627529990160, guid: 11ce6860a9ec8a94fb4ba6f363b6439b, type: 3}
   exitParticle: {fileID: 1228360627529990160, guid: f0ffdbcd7f5949047943375b19d43aff, type: 3}
@@ -296,6 +296,7 @@ MonoBehaviour:
   itemShrink: 0.75
   doubleClickThreshold: 0.18
   attackPoint: {fileID: 2484174825026011992}
+  curScene: 2
 --- !u!1001 &2484174823939456643
 PrefabInstance:
   m_ObjectHideFlags: 0

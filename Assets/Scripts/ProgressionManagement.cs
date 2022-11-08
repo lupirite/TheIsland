@@ -19,8 +19,15 @@ public class ProgressionManagement : MonoBehaviour
 
     private GameObject player;
 
+    [HideInInspector]
+    public bool structureReady = true;
+
     public void buildProgress(float[] progress, int buildLevel)
     {
+        if (progress == null)
+        {
+            return;
+        }
         level = buildLevel;
         for (int i = 0; i < progress.Length; i++)
         {
@@ -54,9 +61,10 @@ public class ProgressionManagement : MonoBehaviour
     GameObject indicator;
     void Update()
     {
-        if (!indicator && structures[level] && level == 0)
+        if (!structureReady && structures[level])
         {
             readyStructure();
+            structureReady = true;
         }
         if (structures[level] && structures[level].GetComponent<structure>().complete && structures[level+1]) {
             level++;

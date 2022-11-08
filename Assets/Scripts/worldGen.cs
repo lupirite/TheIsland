@@ -224,9 +224,13 @@ public class worldGen : MonoBehaviour
             }
         }
 
-        c = getHex(new Vector2(size-1, 0));
-        c.GetComponent<undetermined>().collapse(6);
-        Instantiate(bote, c.position + new Vector3(3, 2.1f, 0), Quaternion.Euler(0, 70, 0), ProgressionManagement.instances[gameObject.scene.buildIndex].transform);
+        if (bote)
+        {
+            c = getHex(new Vector2(size - 1, 0));
+            c.GetComponent<undetermined>().collapse(6);
+            GameObject b = Instantiate(bote, c.position + new Vector3(3, 1.35f, 0), Quaternion.Euler(0, 70, 0), ProgressionManagement.instances[gameObject.scene.buildIndex].transform);
+            ProgressionManagement.instances[gameObject.scene.buildIndex].structures[5] = b;
+        }
 
         setStartCount();
         StartCoroutine(AddTile());
@@ -300,6 +304,8 @@ public class worldGen : MonoBehaviour
         {
             ProgressionManagement.instances[gameObject.scene.buildIndex].UnloadLevel();
         }
+        if (!isDone)
+            ProgressionManagement.instances[gameObject.scene.buildIndex].structureReady = false;
         isDone = true;
     }
     
