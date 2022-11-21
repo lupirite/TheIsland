@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6989964454036542895}
   m_Layer: 6
   m_Name: LushGrass
-  m_TagString: Untagged
+  m_TagString: tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,3 +134,4 @@ MonoBehaviour:
   randomRotation: 1
   chance: 0.808
   dBugOb: {fileID: 2509629798718333914, guid: caac5fbe8499fdd82b70af09a1a79001, type: 3}
+  ID: 0

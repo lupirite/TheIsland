@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -798782925209649664}
   m_Layer: 6
   m_Name: Grass
-  m_TagString: Untagged
+  m_TagString: tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,3 +122,4 @@ MonoBehaviour:
   randomRotation: 1
   chance: 0.357
   dBugOb: {fileID: 0}
+  ID: 0

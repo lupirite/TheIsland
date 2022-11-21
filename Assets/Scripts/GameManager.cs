@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
 
     public TextMeshProUGUI textField;
+    public GameObject cam;
 
     public int camChoice; // (0) Menu (1) Load (2) Player
     private List<Camera> cameras;
@@ -132,6 +133,7 @@ public class GameManager : MonoBehaviour
         canvas.gameObject.SetActive(true);
         player.gameObject.SetActive(true);
         InvokeRepeating("savePlayer", 20, 20);
+        InvokeRepeating("saveWorld", 20, 20);
 
         camChoice = 2;
 

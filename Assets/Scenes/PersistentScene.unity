@@ -1062,6 +1062,7 @@ MonoBehaviour:
     items: []
   player: {fileID: 1457965130}
   textField: {fileID: 2779818887117782942}
+  cam: {fileID: 828024826}
   camChoice: 0
   pickupTypes:
   - {fileID: 2532487751412244264, guid: 8958ffcd1185f3e4390c8c2474ca97d4, type: 3}

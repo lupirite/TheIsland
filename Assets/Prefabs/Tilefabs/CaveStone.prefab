@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8236158820327593340}
   m_Layer: 6
   m_Name: CaveStone
-  m_TagString: Untagged
+  m_TagString: tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,3 +122,4 @@ MonoBehaviour:
   randomRotation: 1
   chance: 0.779
   dBugOb: {fileID: 0}
+  ID: 0

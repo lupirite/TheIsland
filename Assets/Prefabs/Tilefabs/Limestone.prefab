@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3899717604026379607}
   m_Layer: 6
   m_Name: Limestone
-  m_TagString: Untagged
+  m_TagString: tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,3 +124,4 @@ MonoBehaviour:
   randomRotation: 1
   chance: 0.674
   dBugOb: {fileID: 0}
+  ID: 0

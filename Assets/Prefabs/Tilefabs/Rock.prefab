@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7482267560877034972}
   m_Layer: 6
   m_Name: Rock
-  m_TagString: Untagged
+  m_TagString: tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,6 +127,7 @@ MonoBehaviour:
   randomRotation: 1
   chance: 0.5
   dBugOb: {fileID: 0}
+  ID: 0
 --- !u!1001 &4924462724524382958
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -193,6 +194,10 @@ PrefabInstance:
     - target: {fileID: 3953553735494530101, guid: 34a950d4a2991fa17a6b2ed6d2c2a8a0, type: 3}
       propertyPath: m_Name
       value: Snow
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953553735494530101, guid: 34a950d4a2991fa17a6b2ed6d2c2a8a0, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34a950d4a2991fa17a6b2ed6d2c2a8a0, type: 3}
