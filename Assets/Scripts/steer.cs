@@ -16,6 +16,16 @@ public class steer : MonoBehaviour
     public Transform hitPos;
     public LayerMask tileMask;
 
+    private void Start()
+    {
+        Vector3 botPos = worldGen.instances[gameObject.scene.buildIndex].boatPos;
+        if (botPos != Vector3.zero)
+        {
+            transform.parent.position = botPos;
+            transform.parent.eulerAngles = worldGen.instances[gameObject.scene.buildIndex].boatRot;
+        }
+    }
+
     float time = 0;
     float timeSinceClick;
     private void Update()

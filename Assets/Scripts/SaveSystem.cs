@@ -40,7 +40,22 @@ public static class SaveSystem
             }
         }
 
-        WorldData data = new WorldData(seed, trees, pickups, levels, buildProgress);
+        float[] foundaryInv = null;
+        GameObject fon = ProgressionManagement.instances[2].structures[3];
+        if (fon.active)
+        {
+            foundaryInv = fon.transform.GetChild(1).GetComponent<Smelter>().inventory;
+        }
+
+        float[] boatPos = new float[3];
+        for (int i = 0; i < 3; i++)
+            boatPos[i] = ProgressionManagement.instances[2].structures[5].transform.position[i];
+
+        float[] boatRot = new float[3];
+        for (int i = 0; i < 3; i++)
+            boatRot[i] = ProgressionManagement.instances[2].structures[5].transform.eulerAngles[i];
+
+        WorldData data = new WorldData(seed, trees, pickups, levels, buildProgress, foundaryInv, boatPos, boatRot);
 
         formatter.Serialize(stream, data);
         stream.Close();

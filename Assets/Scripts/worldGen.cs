@@ -23,6 +23,10 @@ public class worldGen : MonoBehaviour
     public bool cave;
     public Transform pickupParent;
 
+    public Vector3 boatPos;
+    public Vector3 boatRot;
+    public float[] inv;
+
     public static int seed = 3;
 
     [HideInInspector]
@@ -91,6 +95,11 @@ public class worldGen : MonoBehaviour
             seed = data.seed;
             trees = data.allTrees[gameObject.scene.buildIndex];
             pkps = data.pickups;
+            for (int i = 0; i < 3; i++)
+                boatPos[i] = data.boatPos[i];
+            for (int i = 0; i < 3; i++)
+                boatRot[i] = data.boatRot[i];
+            inv = data.foundaryInv;
             StartCoroutine(loadProgress(data));
         }
     }

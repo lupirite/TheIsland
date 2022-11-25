@@ -19,7 +19,11 @@ public class Smelter : MonoBehaviour
     private void Start()
     {
         startHeight = transform.position.y;
-        inventory = new float[10];
+        float[] inv = worldGen.instances[gameObject.scene.buildIndex].inv;
+        if (inv != null)
+            inventory = inv;
+        else
+            inventory = new float[10];
         EvaluateHeight();
     }
     void Update()
