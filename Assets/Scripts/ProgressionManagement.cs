@@ -17,6 +17,8 @@ public class ProgressionManagement : MonoBehaviour
 
     public Vector3 spawnPoint;
 
+    public GameObject curIndicator;
+
     private GameObject player;
 
     [HideInInspector]
@@ -75,6 +77,7 @@ public class ProgressionManagement : MonoBehaviour
     void readyStructure()
     {
         indicator = Instantiate(itemIndicator, transform);
+        curIndicator = indicator;
         indicator.transform.position = structures[level].transform.Find("indPos").position;
         indicator.GetComponent<Bilboard>().curStruct = structures[level];
         structures[level].GetComponent<structure>().enabled = true;

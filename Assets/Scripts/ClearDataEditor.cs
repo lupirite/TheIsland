@@ -3,6 +3,7 @@ using UnityEditor;
 using UnityEngine;
 
 // Comment out before build
+///*
 [CustomEditor(typeof(GameManager))]
 public class ClearDataEditor : Editor
 {
@@ -17,3 +18,4 @@ public class ClearDataEditor : Editor
         }
     }
 }
+//*/

@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Gem Mine.unity
+    guid: 1466934a3fe541d4d9755d98fa1e5389
   m_configObjects: {}

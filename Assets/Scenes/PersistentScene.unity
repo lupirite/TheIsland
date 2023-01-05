@@ -1071,6 +1071,7 @@ MonoBehaviour:
   - {fileID: 1715158248300980610, guid: ece8ad273961fbb48bd6ae232fae312a, type: 3}
   - {fileID: 4496978709524522001, guid: 90fa477619deb0049b14b58612f5db50, type: 3}
   - {fileID: 2366050550730199009, guid: 60fd8e79fb423464983bbcbf1bf9ae5f, type: 3}
+  - {fileID: 7297663682363592537, guid: a1e6d95b2d559cd44be10e4748a859c8, type: 3}
 --- !u!4 &1320682026
 Transform:
   m_ObjectHideFlags: 0
@@ -1140,6 +1141,10 @@ PrefabInstance:
     - target: {fileID: 2484174823485625473, guid: f512999a2f361bd448fa98148988d58d, type: 3}
       propertyPath: m_Height
       value: 1.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484174823485625473, guid: f512999a2f361bd448fa98148988d58d, type: 3}
+      propertyPath: m_StepOffset
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 2484174823485625476, guid: f512999a2f361bd448fa98148988d58d, type: 3}
       propertyPath: stick

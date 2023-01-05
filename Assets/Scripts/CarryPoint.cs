@@ -64,6 +64,10 @@ public class CarryPoint : MonoBehaviour
         {
             height = log.transform.localScale.z*.75f;
         }
+        if (log.name == GameManager.instance.pickupTypes[6].name + "(Clone)")
+        {
+            height = log.transform.localScale.z * .6f;
+        }
         if (log.name == GameManager.instance.pickupTypes[5].name + "(Clone)")
         {
             height = log.transform.localScale.y * .75f;
@@ -81,7 +85,7 @@ public class CarryPoint : MonoBehaviour
             startPos = player.position;
         }
         yield return new WaitForSeconds(1);
-        if (player.position == startPos || onStart)
+        if (player.position == startPos || onStart && log.layer != 1)
         {
             if (!onStart)
             {
@@ -90,7 +94,7 @@ public class CarryPoint : MonoBehaviour
             log.transform.parent = transform;
             log.transform.localEulerAngles = new Vector3(0, 90, 0);
             float height = getHeight(log);
-            if (log.name != GameManager.instance.pickupTypes[0].name+ "(Clone)" && log.name != GameManager.instance.pickupTypes[2].name + "(Clone)" && log.name != GameManager.instance.pickupTypes[5].name + "(Clone)")
+            if (log.name != GameManager.instance.pickupTypes[0].name+ "(Clone)" && log.name != GameManager.instance.pickupTypes[2].name + "(Clone)" && log.name != GameManager.instance.pickupTypes[5].name + "(Clone)" && log.name != GameManager.instance.pickupTypes[6].name + "(Clone)")
             {
                 log.transform.localEulerAngles = new Vector3(90, 90, 0);
             }

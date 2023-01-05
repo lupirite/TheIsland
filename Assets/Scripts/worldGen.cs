@@ -21,6 +21,7 @@ public class worldGen : MonoBehaviour
     public int size;
     public int regionSplits;
     public bool cave;
+    public bool gemCave;
     public Transform pickupParent;
 
     public Vector3 boatPos;
@@ -159,6 +160,7 @@ public class worldGen : MonoBehaviour
             }
         }
 
+        int g = 0;
         List<int> choices = new List<int>();
         if (!cave) {
             for (int i = 0; i < regionSplits * regionSplits; i++)
@@ -176,12 +178,20 @@ public class worldGen : MonoBehaviour
         else {
             for (int i = 0; i < regionSplits * regionSplits; i++)
             {
-                if (i < regionSplits * regionSplits * .5f)
-                    choices.Add(4);
+                if (gemCave && g % 2 == 0)
+                {
+                    choices.Add(6);
+                }
                 else
                 {
-                    choices.Add(3);
+                    if (i < regionSplits * regionSplits * .5f)
+                        choices.Add(4);
+                    else
+                    {
+                        choices.Add(3);
+                    }
                 }
+                g++;
             }
         }
         Transform c;

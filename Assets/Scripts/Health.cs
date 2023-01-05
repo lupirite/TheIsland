@@ -19,9 +19,16 @@ public class Health : MonoBehaviour
 
     public void Start()
     {
-        if (worldGen.instances[gameObject.scene.buildIndex].trees[ID])
+        try
         {
-            dead = true;
+            if (ID != -999 && worldGen.instances[gameObject.scene.buildIndex].trees[ID])
+            {
+                dead = true;
+            }
+        }
+        catch
+        {
+            //print(ID);
         }
         if (!dead)
         {
@@ -51,7 +58,8 @@ public class Health : MonoBehaviour
     }
 
     public IEnumerator Die() {
-        worldGen.instances[gameObject.scene.buildIndex].killTree(ID);
+        if (ID != -999)
+            worldGen.instances[gameObject.scene.buildIndex].killTree(ID);
         if (stump != null) {
             GameObject gO = Instantiate(stump, transform.position, Quaternion.Euler(transform.eulerAngles + stump.transform.eulerAngles), transform.parent);
             gO.transform.localScale = transform.localScale*stump.transform.localScale.magnitude;

@@ -22,6 +22,11 @@ public class Bilboard : MonoBehaviour
     }
     void Update()
     {
+        if (ProgressionManagement.instances[gameObject.scene.buildIndex].curIndicator != gameObject)
+        {
+            Destroy(gameObject);
+        }
+
         transform.eulerAngles = new Vector3(0, playerCam.eulerAngles.y, 0);
         if (!createdIcons)
         {

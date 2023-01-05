@@ -120,6 +120,6 @@ MonoBehaviour:
   sizeRange: 0.05
   placementRange: 0.25
   randomRotation: 1
-  chance: 0.16
+  chance: 0.075
   dBugOb: {fileID: 0}
   ID: 0

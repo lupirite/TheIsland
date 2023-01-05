@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exitPos: {fileID: 7363302860587684403}
   toScene: 2
+  secondary: 0
 --- !u!1 &4046358580128904307
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,6 +161,8 @@ MonoBehaviour:
   health: 100
   stump: {fileID: 0}
   log: {fileID: 1715158248300980610, guid: ec6593ea86149e8f1bc698772939f8de, type: 3}
+  particle: {fileID: 0}
+  ID: 0
   logSizeMultiplier: 0.8
   logSizeFalloff: 0
   logAmount: 2
@@ -1109,11 +1112,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4368336313889239816, guid: 292628c9ca9793772b06d534fa674a94, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.098
+      value: -1.343
       objectReference: {fileID: 0}
     - target: {fileID: 4368336313889239816, guid: 292628c9ca9793772b06d534fa674a94, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.153
       objectReference: {fileID: 0}
     - target: {fileID: 4368336313889239816, guid: 292628c9ca9793772b06d534fa674a94, type: 3}
       propertyPath: m_LocalPosition.z
